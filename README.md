@@ -14,9 +14,7 @@ A Unity 6 prototype that turns decentralized purchase requests from a network of
 
 Tip: Your work (submitted requests, approvals, merges, policy changes, and the persona you're acting as) is saved to `procurement-hub-state.json` in `Application.persistentDataPath`. To start over, click **Reset demo data** in the sidebar.
 
-## Summary and getting started
-The program is to provide a user interface for category management to visualize data all across companies.
-
+## Getting Started
 Overview:
 1. Drag the 3D globe to see all Carrix subsidariess.
 2. Hover over each node to view summary or click them to view comprehensive procurement details - It will display spending/analytics, requests/alerts, categories for that specific division.
@@ -28,8 +26,8 @@ New Request:
 4. This request will now show up in the request queue with all the information regarding it. Once the request lifecycle is complete, it will be closed.
 
 Features:
-1. Click spend analytics and it will let you sort it by business, entities, categories, and timeframe.
-2. Suppliers and contracts will allow you to view a list of current suppliers as well as their categories and spending.
+1. Spend analytics - Displayed by business, entities, categories, and timeframe.
+2. Suppliers and contracts - View list of current suppliers along with categories and spend data.
 
 ## What it does
 
