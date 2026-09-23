@@ -4,7 +4,7 @@ A Unity 6 prototype that turns decentralized purchase requests from a network of
 
 > I studied how Carrix's marine, rail and technology companies create procurement complexity, then built a prototype that converts decentralized requests into standardized, traceable procurement decisions. Built with Unity 6 and C#, using agentic AI as part of the development workflow. I defined the product requirements and architecture, guided implementation, reviewed the generated code, tested behavior, and made the final technical and product decisions.
 
-**All data is synthetic.** Companies, sites, suppliers, contracts, prices and people are generated from a fixed seed for demonstration. This project is not affiliated with or endorsed by Carrix, SSA Marine, Rail Management Services or Tideworks Technology.
+**All data is synthetic.** Companies, sites, suppliers, contracts, prices and people are generated from a fixed seed for demonstration. This project is not affiliated with or endorsed by Carrix, SSA Marine, Rail Management Services or Tideworks Technology. I built this as a hypothesis based on the role description and my understanding of the organization. I would not assume this is the right production solution without interviewing Procurement users and examining the existing workflow. Although, this was built using Unity and C# just for demo purposes, I was thinking the actual application could utilize a combination ASP.NET, Blazor, Powerautomate, etc.
 
 <img width="1885" height="955" alt="image" src="https://github.com/user-attachments/assets/f7590af2-9f23-4cd4-abd7-6b9bab32b969" />
 
