@@ -8,14 +8,9 @@ A Unity 6 prototype that turns decentralized purchase requests from a network of
 
 <img width="1885" height="955" alt="image" src="https://github.com/user-attachments/assets/f7590af2-9f23-4cd4-abd7-6b9bab32b969" />
 
-## Download and launch
-1. Download the executable from this link: https://drive.google.com/file/d/1yOh0Lr8qGFXQCmLY7qG8WeNztDIOF50U/view?usp=drive_link
-2. Unzip it and launch the "GlobalProcurementHub.exe" file.
-
-Tip: Your work (submitted requests, approvals, merges, policy changes, and the persona you're acting as) is saved to `procurement-hub-state.json` in `Application.persistentDataPath`. To start over, click **Reset demo data** in the sidebar.
-
 ## Getting Started
 Overview:
+1. Open this link: https://jaypideveloper.github.io/Web-Demo/
 1. Drag the 3D globe to see all Carrix subsidaries.
 2. Hover over each node to view summary or click them to view comprehensive procurement details - It will display spending/analytics, requests/alerts, categories for that specific division.
 
@@ -31,6 +26,8 @@ Features:
 3. Data quality - ERP data conversion.
 4. Policy and routing - Change and apply policies.
 5. Data Model and SQL - View SQL data and export data as CSV.
+
+Tip: Your work (submitted requests, approvals, merges, policy changes, and the persona you're acting as) is saved to `procurement-hub-state.json` in `Application.persistentDataPath`. To start over, click **Reset demo data** in the sidebar.
 
 ## What it does
 
