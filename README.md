@@ -8,7 +8,6 @@ A Unity 6 prototype that turns decentralized purchase requests from a network of
 
 <img width="1885" height="955" alt="image" src="https://github.com/user-attachments/assets/f7590af2-9f23-4cd4-abd7-6b9bab32b969" />
 
-
 ## Download and launch
 1. Download the executable from this link: https://drive.google.com/file/d/1yOh0Lr8qGFXQCmLY7qG8WeNztDIOF50U/view?usp=drive_link
 2. Unzip it and launch the "GlobalProcurementHub.exe" file.
@@ -44,13 +43,3 @@ Features:
 | **Data Quality** | Fuzzy vendor clustering with human-approved merges, and the legacy → IFS ERP migration over time. Unclassified legacy spend gets auto-classification suggestions, alongside 3-way match exceptions. |
 | **Policy & Routing** | Editable engagement rules with a live impact preview on the request backlog, plus the delegation-of-authority matrix and the category → manager routing matrix. |
 | **Data Model & SQL** | Relational schema (13 tables) and the PostgreSQL behind each metric, with live result previews. Exports `01_schema.sql`, `02_seed.sql`, `03_analytics_queries.sql` and `purchase_lines.csv`. |
-
-### The three engagement rules (placeholders)
-
-The official category poster wasn't available, so the rules are modeled on common practice and are editable in **Policy & Routing**:
-
-1. **Spend threshold:** estimated value ≥ $25,000. Related spend at the same site and category within a look-back window also counts, which catches split purchases.
-2. **Contractual commitment:** any contract, agreement, lease, SOW, subscription or supplier terms, regardless of value.
-3. **New or non-approved supplier:** the supplier isn't in the vendor master, or isn't approved for the category (matched with fuzzy logic against every known alias).
-
-**Emergencies** (equipment down, safety) proceed immediately and are queued for a procurement post-review within 48 h.
