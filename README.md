@@ -7,13 +7,12 @@ A Unity 6 prototype that turns decentralized purchase requests from a network of
 **All data is synthetic.** Companies, sites, suppliers, contracts, prices and people are generated from a fixed seed for demonstration. This project is not affiliated with or endorsed by Carrix, SSA Marine, Rail Management Services or Tideworks Technology.
 
 ![Command Center](Docs/screenshots/01-command-center.png)
+<img width="1885" height="955" alt="image" src="https://github.com/user-attachments/assets/f7590af2-9f23-4cd4-abd7-6b9bab32b969" />
 
-## Run it
 
-- **Standalone:** run `Builds/ProcurementHub/GlobalProcurementHub.exe` (Windows, resizable window).
-- **Editor:** open `Assets/ProcurementHub/Scenes/ProcurementHub.unity` in Unity 6000.6 and press Play. For best results, set the Game view to 1920×1080 or larger.
-- **Rebuild the scene and assets:** use *Tools → Procurement Hub → Build Scene and Assets*.
-- **Build the player:** use *Tools → Procurement Hub → Build Windows Player*.
+## Download and launch
+Download the executable from this link: https://drive.google.com/file/d/1yOh0Lr8qGFXQCmLY7qG8WeNztDIOF50U/view?usp=drive_link
+Unzip it and launch the "GlobalProcurementHub.exe" file.
 
 Your work (submitted requests, approvals, merges, policy changes, and the persona you're acting as) is saved to `procurement-hub-state.json` in `Application.persistentDataPath`. To start over, click **Reset demo data** in the sidebar.
 
