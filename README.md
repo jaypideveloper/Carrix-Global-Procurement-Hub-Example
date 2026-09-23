@@ -6,7 +6,6 @@ A Unity 6 prototype that turns decentralized purchase requests from a network of
 
 **All data is synthetic.** Companies, sites, suppliers, contracts, prices and people are generated from a fixed seed for demonstration. This project is not affiliated with or endorsed by Carrix, SSA Marine, Rail Management Services or Tideworks Technology.
 
-![Command Center](Docs/screenshots/01-command-center.png)
 <img width="1885" height="955" alt="image" src="https://github.com/user-attachments/assets/f7590af2-9f23-4cd4-abd7-6b9bab32b969" />
 
 
