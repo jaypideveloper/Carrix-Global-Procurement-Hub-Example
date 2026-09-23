@@ -1,0 +1,20 @@
+{
+    "name": "ProcurementHub.Editor",
+    "rootNamespace": "ProcurementHub.EditorTools",
+    "references": [
+        "ProcurementHub",
+        "Unity.InputSystem",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
