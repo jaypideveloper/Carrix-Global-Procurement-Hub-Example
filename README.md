@@ -28,6 +28,9 @@ New Request:
 Features:
 1. Spend analytics - Displayed by business, entities, categories, and timeframe.
 2. Suppliers and contracts - View list of current suppliers along with categories and spend data.
+3. Data quality - ERP data conversion.
+4. Policy and routing - Change and apply policies.
+5. Data Model and SQL - View SQL data and export data as CSV.
 
 ## What it does
 
@@ -41,3 +44,8 @@ Features:
 | **Data Quality** | Fuzzy vendor clustering with human-approved merges, and the legacy → IFS ERP migration over time. Unclassified legacy spend gets auto-classification suggestions, alongside 3-way match exceptions. |
 | **Policy & Routing** | Editable engagement rules with a live impact preview on the request backlog, plus the delegation-of-authority matrix and the category → manager routing matrix. |
 | **Data Model & SQL** | Relational schema (13 tables) and the PostgreSQL behind each metric, with live result previews. Exports `01_schema.sql`, `02_seed.sql`, `03_analytics_queries.sql` and `purchase_lines.csv`. |
+
+# Conclusion
+The Global Procurement Operations Hub is a centralized experience layer designed to make IFS easier to use and act on—not replace it. It provides a guided intake process across departments, proactive alerts for category managers, and accessible spend analysis across locations. The Hub brings requests, suppliers, contracts, purchasing activity, and operational context together so users can identify the correct workflow, determine when Procurement should be involved, and turn fragmented records into actionable work.
+
+I defined the business problem, product requirements, application scope, and user experience before structuring the prototype in Unity and C#. I used coding agents to accelerate selected implementation tasks while supplying the requirements and constraints, reviewing and modifying generated code, testing behavior, debugging integration issues, and retaining responsibility for every final technical and product decision.
