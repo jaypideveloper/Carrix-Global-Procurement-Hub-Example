@@ -2,7 +2,7 @@
 
 A Unity 6 prototype that turns decentralized purchase requests from a network of marine terminals, rail and intermodal operations, and a terminal-software company into standardized, traceable procurement decisions.
 
-> I studied how Carrix's marine, rail and technology companies create procurement complexity, then built a prototype that converts decentralized requests into standardized, traceable procurement decisions.
+> I studied how Carrix's marine, rail and technology companies create procurement complexity, then built a prototype that converts decentralized requests into standardized, traceable procurement decisions. Built with Unity 6 and C#, using agentic AI as part of the development workflow. I defined the product requirements and architecture, guided implementation, reviewed the generated code, tested behavior, and made the final technical and product decisions.
 
 **All data is synthetic.** Companies, sites, suppliers, contracts, prices and people are generated from a fixed seed for demonstration. This project is not affiliated with or endorsed by Carrix, SSA Marine, Rail Management Services or Tideworks Technology.
 
@@ -10,10 +10,27 @@ A Unity 6 prototype that turns decentralized purchase requests from a network of
 
 
 ## Download and launch
-Download the executable from this link: https://drive.google.com/file/d/1yOh0Lr8qGFXQCmLY7qG8WeNztDIOF50U/view?usp=drive_link
-Unzip it and launch the "GlobalProcurementHub.exe" file.
+1. Download the executable from this link: https://drive.google.com/file/d/1yOh0Lr8qGFXQCmLY7qG8WeNztDIOF50U/view?usp=drive_link
+2. Unzip it and launch the "GlobalProcurementHub.exe" file.
 
-Your work (submitted requests, approvals, merges, policy changes, and the persona you're acting as) is saved to `procurement-hub-state.json` in `Application.persistentDataPath`. To start over, click **Reset demo data** in the sidebar.
+Tip: Your work (submitted requests, approvals, merges, policy changes, and the persona you're acting as) is saved to `procurement-hub-state.json` in `Application.persistentDataPath`. To start over, click **Reset demo data** in the sidebar.
+
+## Summary and getting started
+The program is to provide a user interface for category management to visualize data all across companies.
+
+Overview:
+1. Drag the 3D globe to see all Carrix subsidariess.
+2. Hover over each node to view summary or click them to view comprehensive procurement details - It will display spending/analytics, requests/alerts, categories for that specific division.
+
+New Request:
+1. Click new request, it will display a list of scenarios, click one.
+2. Select who's opening the request and which entity/site.
+3. Write a description of what you are requesting, supplier, and deadline/priority.
+4. This request will now show up in the request queue with all the information regarding it. Once the request lifecycle is complete, it will be closed.
+
+Features:
+1. Click spend analytics and it will let you sort it by business, entities, categories, and timeframe.
+2. Suppliers and contracts will allow you to view a list of current suppliers as well as their categories and spending.
 
 ## What it does
 
@@ -37,44 +54,3 @@ The official category poster wasn't available, so the rules are modeled on commo
 3. **New or non-approved supplier:** the supplier isn't in the vendor master, or isn't approved for the category (matched with fuzzy logic against every known alias).
 
 **Emergencies** (equipment down, safety) proceed immediately and are queued for a procurement post-review within 48 h.
-
-### Assistant with a human in the loop
-
-The recommendation engine is deterministic and explainable. It shows what it checked, why it recommends what it does, the risks it sees, and a confidence score. Nothing is applied until a person clicks **Accept** or **Override** (with a reason), and every decision goes into the audit trail. If `ANTHROPIC_API_KEY` is set before launch, you can also ask Claude (`claude-opus-5`, via the Messages API) follow-up questions about a recommendation. It only explains; it never acts.
-
-## How the data problem is simulated
-
-- **10 legal entities** across SSA Marine (containers, conventional, cruise), RMS (PRS, RTS, TSS, PTRS, PRS Auto), Tideworks and Corporate. They go live on IFS ERP in phases, while earlier spend comes from legacy AP, site spreadsheets and P-cards.
-- **About 15K purchase lines over 24 months**, driven by per-site-type demand profiles and a priced item catalog with about 100 items.
-- **One supplier, many vendor records:** each entity and system creates its own record, with spellings like `PAC CRANE PTS INC - TACOMA`, typos and remit-to duplicates.
-- **Realistic leakage:** contract compliance varies by entity, legacy system and urgency. Off-contract purchases carry a price premium, and some spend continues after an agreement expires.
-- **Exceptions:** invoice and receipt mismatches, no-PO buying, split purchases, and unclassified legacy lines.
-
-## Architecture
-
-```
-Assets/ProcurementHub/
-  Scripts/Core/      Domain model, synthetic generator, rules & services (pure C#, unit-tested)
-    Domain.cs  ReferenceData.cs  HubDatabase.cs      data model + deterministic generator
-    VendorNormalizer.cs  CategoryClassifier.cs       fuzzy matching, explainable classification
-    DecisionEngine.cs                                engagement rules, routing, contracts, pricing, recommendation
-    AlertEngine.cs  Analytics.cs  Workflow.cs        alerts, spend cube, request lifecycle
-    SqlExporter.cs                                   schema, seed data, analytic SQL
-  Scripts/Globe/     Procedural dot-matrix globe, pins, arcs, orbit camera (renders to a RenderTexture)
-  Scripts/UI/        UI Toolkit app shell, reusable controls (tables, charts), one class per page
-  Shaders/           Single URP unlit shader (vertex color, fresnel rim, configurable blend)
-  UI/                Hub.uss design system, runtime theme, PanelSettings
-  Editor/            One-click scene/asset setup and player build
-  Tests/Editor/      17 NUnit EditMode tests (rules, matching, classification, workflow, determinism)
-```
-
-- **Rendering:** UI Toolkit for every screen, with charts built from VisualElements and Painter2D. The globe renders into a RenderTexture that's shown inside the UI, so pointer events drive orbiting, zooming and picking.
-- **Charts:** they follow a validated colorblind-safe categorical palette. Business-unit colors are consistent across the globe and the charts, and status colors are reserved for alerts.
-
-## Tests
-
-Run them from *Window → General → Test Runner → EditMode*, or from the CLI:
-
-```bash
-unity test "C:\Users\Arkad\Documents\Unity\SSA Marine Procurement" --mode EditMode
-```
